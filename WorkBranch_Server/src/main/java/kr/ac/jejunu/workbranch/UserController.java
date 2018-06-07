@@ -2,10 +2,9 @@ package kr.ac.jejunu.workbranch;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")
@@ -16,5 +15,25 @@ public class UserController {
     @GetMapping("/{id}")
     public User get(@PathVariable Integer id) {
         return userRepository.findById(id).get();
+    }
+
+    @GetMapping("/list")
+    public List<User> list() {
+        return userRepository.findAll();
+    }
+
+    @PostMapping
+    public User insert(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
+    @PutMapping
+    public void modify(@RequestBody User user) {
+        userRepository.save(user);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        userRepository.delete(userRepository.findById(id).get());
     }
 }

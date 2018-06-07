@@ -1,12 +1,15 @@
 package kr.ac.jejunu.workbranch;
 
 
+import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.*;
@@ -34,7 +37,61 @@ public class UserTest {
     }
 
     @Test
+    public void list() {
+        List<User> users = restTemplate.getForObject( PATH +"/list", List.class);
+        assertThat(users, not(IsEmptyCollection.empty()));
+    }
+
+    @Test
     public void insert(){
-        
+        String email = "testuser1@test.com";
+        String name = "minhyeok";
+        String password = "12345";
+        User createdUser = createUser(email, name, password);
+        validate(email, name, password, createdUser);
+    }
+
+    private void validate(String email, String name, String password, User createdUser) {
+        User resultUser = restTemplate.getForObject(PATH + "/" + createdUser.getId(), User.class);
+        assertThat(resultUser.getEmail(), is(email));
+        assertThat(resultUser.getName(), is(name));
+        assertThat(resultUser.getPassword(), is(password));
+
+    }
+
+    private User createUser(String email, String name, String password) {
+        User user = new User();
+        user.setEmail(email);
+        user.setName(name);
+        user.setPassword(password);
+        return restTemplate.postForObject(PATH, user, User.class);
+    }
+
+    @Test
+    public void modify() {
+        String email = "testuser1@test.com";
+        String name = "minhyeok";
+        String password = "12345";
+        User createdUser = createUser(email, name, password);
+        createdUser.setName("tester1");
+        createdUser.setPassword("12345678");
+        restTemplate.put(PATH, createdUser);
+        validate(email, "tester1", "12345678" , createdUser);
+    }
+
+    @Test
+    public void delete() {
+        String email = "testuser1@test.com";
+        String name = "minhyeok";
+        String password = "12345";
+        User createdUser = createUser(email, name, password);
+        validate(email, name, password, createdUser);
+        restTemplate.delete(PATH + "/" + createdUser.getId());
+        User user = restTemplate.getForObject(PATH + "/" + createdUser.getId(), User.class);
+        assertThat(user.getId(), is(nullValue()));
+        assertThat(user.getEmail(), is(nullValue()));
+        assertThat(user.getName(), is(nullValue()));
+        assertThat(user.getPassword(), is(nullValue()));
+
     }
 }
