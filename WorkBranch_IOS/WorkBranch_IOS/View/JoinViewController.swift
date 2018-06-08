@@ -22,15 +22,20 @@ class JoinViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "취소", style: .cancel))
         
         self.present(alert, animated: false)
-        
-        
     }
     
     func joinWithJson() {
+        // 회원정보
+        let uvo = UserVO()
+        // 가입 정보 받아오기
+        uvo.email = emailField.text
+        uvo.name = nameField.text
+        uvo.password = passwordField.text
+        
         let url = URL(string: "http://localhost:8080/api/user")!
-        let jsonDict = ["email": "\(String(emailField.text!))",
-            "name": "\(String(nameField.text!))",
-            "password": "\(String(passwordField.text!))"]
+        let jsonDict = ["email": "\(String(uvo.email!))",
+            "name": "\(String(uvo.name!))",
+            "password": "\(String(uvo.password!))"]
         let jsonData = try! JSONSerialization.data(withJSONObject: jsonDict, options: [])
         
         var request = URLRequest(url: url)
