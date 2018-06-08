@@ -24,8 +24,7 @@ class ViewController: UIViewController {
 
     @IBAction func login(_ sender: Any) {
     }
+
     
-    @IBAction func join(_ sender: Any) {
-    }
 }
 

@@ -16,6 +16,7 @@
 		1853C0AA20C161990061274D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1853C0A820C161990061274D /* LaunchScreen.storyboard */; };
 		1853C0B520C161990061274D /* WorkBranch_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C0B420C161990061274D /* WorkBranch_IOSTests.swift */; };
 		1853C0C020C161990061274D /* WorkBranch_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C0BF20C161990061274D /* WorkBranch_IOSUITests.swift */; };
+		18D6E34820C94F1F00B548EC /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E34720C94F1F00B548EC /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1853C0BB20C161990061274D /* WorkBranch_IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkBranch_IOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1853C0BF20C161990061274D /* WorkBranch_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBranch_IOSUITests.swift; sourceTree = "<group>"; };
 		1853C0C120C161990061274D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D6E34720C94F1F00B548EC /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		183DEB6020C941BE00132C96 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18D6E34720C94F1F00B548EC /* JoinViewController.swift */,
 				183DEB6120C941D800132C96 /* UserViewController.swift */,
 				1853C09E20C161970061274D /* ViewController.swift */,
 			);
@@ -273,6 +276,7 @@
 				1853C09F20C161970061274D /* ViewController.swift in Sources */,
 				1853C0A520C161970061274D /* WorkBranch_IOS.xcdatamodeld in Sources */,
 				183DEB6220C941D800132C96 /* UserViewController.swift in Sources */,
+				18D6E34820C94F1F00B548EC /* JoinViewController.swift in Sources */,
 				1853C09D20C161970061274D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
