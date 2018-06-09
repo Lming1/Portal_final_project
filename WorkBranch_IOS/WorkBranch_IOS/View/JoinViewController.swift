@@ -18,6 +18,7 @@ class JoinViewController: UIViewController {
         let alert = UIAlertController(title: "회원 가입", message: "입력한 정보가 정확하면 확인 버튼을 눌러주세요", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default) { (_) in
             self.joinWithJson()
+            _ = self.navigationController?.popViewController(animated: true)
         })
         alert.addAction(UIAlertAction(title: "취소", style: .cancel))
         
