@@ -47,12 +47,16 @@ class JoinViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("error:", error)
+                let alert = UIAlertController(title: "네트워크 연결 오류", message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .cancel))
+                self.present(alert, animated: false)
                 return
             }
-            
             do {
                 guard let data = data else { return }
-                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] else { return }
+                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] else {
+                    return
+                }
                 print("json:", json)
             } catch {
                 print("error:", error)
@@ -60,6 +64,8 @@ class JoinViewController: UIViewController {
         }
         
         task.resume()
+        
+        
     }
     @IBAction func cancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
