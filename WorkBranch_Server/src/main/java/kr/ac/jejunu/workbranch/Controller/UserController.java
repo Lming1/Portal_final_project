@@ -4,6 +4,7 @@ package kr.ac.jejunu.workbranch.Controller;
 import kr.ac.jejunu.workbranch.Model.User;
 import kr.ac.jejunu.workbranch.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,8 @@ public class UserController {
 
     @PostMapping
     public User insert(@RequestBody User user) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 

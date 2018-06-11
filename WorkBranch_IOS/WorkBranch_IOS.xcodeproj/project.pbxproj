@@ -17,6 +17,7 @@
 		1853C0AA20C161990061274D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1853C0A820C161990061274D /* LaunchScreen.storyboard */; };
 		1853C0B520C161990061274D /* WorkBranch_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C0B420C161990061274D /* WorkBranch_IOSTests.swift */; };
 		1853C0C020C161990061274D /* WorkBranch_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C0BF20C161990061274D /* WorkBranch_IOSUITests.swift */; };
+		1866A1DA20CE944F009EB4C6 /* memo-0-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1866A1D920CE944F009EB4C6 /* memo-0-1.jpg */; };
 		18D6E34820C94F1F00B548EC /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E34720C94F1F00B548EC /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		1853C0BB20C161990061274D /* WorkBranch_IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkBranch_IOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1853C0BF20C161990061274D /* WorkBranch_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBranch_IOSUITests.swift; sourceTree = "<group>"; };
 		1853C0C120C161990061274D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1866A1D920CE944F009EB4C6 /* memo-0-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "memo-0-1.jpg"; sourceTree = "<group>"; };
 		18D6E34720C94F1F00B548EC /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 		1853C09020C161970061274D = {
 			isa = PBXGroup;
 			children = (
+				1866A1D820CE9442009EB4C6 /* resources */,
 				1853C09B20C161970061274D /* WorkBranch_IOS */,
 				1853C0B320C161990061274D /* WorkBranch_IOSTests */,
 				1853C0BE20C161990061274D /* WorkBranch_IOSUITests */,
@@ -151,6 +154,14 @@
 				1853C0C120C161990061274D /* Info.plist */,
 			);
 			path = WorkBranch_IOSUITests;
+			sourceTree = "<group>";
+		};
+		1866A1D820CE9442009EB4C6 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				1866A1D920CE944F009EB4C6 /* memo-0-1.jpg */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1866A1DA20CE944F009EB4C6 /* memo-0-1.jpg in Resources */,
 				1853C0AA20C161990061274D /* LaunchScreen.storyboard in Resources */,
 				1853C0A720C161990061274D /* Assets.xcassets in Resources */,
 				1853C0A220C161970061274D /* Main.storyboard in Resources */,
