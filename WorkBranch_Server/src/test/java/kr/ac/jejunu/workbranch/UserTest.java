@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -28,6 +30,7 @@ public class UserTest {
         String email = "testuser@test.com";
         String name = "ming";
         String password = "1234";
+        String user_photo = null;
         User user = restTemplate.getForObject(PATH + "/" + id, User.class);
         assertThat(user.getId(), is(id));
         assertThat(user.getEmail(), is(email));

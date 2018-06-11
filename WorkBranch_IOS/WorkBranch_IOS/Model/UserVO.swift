@@ -8,10 +8,11 @@
 import UIKit
 import Foundation
 class UserVO {
+    var id: String?
     var email: String?
     var name: String?
     var password: String?
     var userPhoto: UIImage?
-    
+    var regdate: String?
 }
 

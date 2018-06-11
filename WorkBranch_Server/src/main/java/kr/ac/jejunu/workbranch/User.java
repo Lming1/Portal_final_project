@@ -2,11 +2,16 @@ package kr.ac.jejunu.workbranch;
 
 
 import lombok.Data;
+import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity(name = "user_info")
+@ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +25,15 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = true)
+    private String user_photo;
+
+    @Column(name = "reg_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date regDate;
+
+
+
 
 }
