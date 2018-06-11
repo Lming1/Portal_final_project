@@ -1,6 +1,8 @@
-package kr.ac.jejunu.workbranch;
+package kr.ac.jejunu.workbranch.Controller;
 
 
+import kr.ac.jejunu.workbranch.Model.User;
+import kr.ac.jejunu.workbranch.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

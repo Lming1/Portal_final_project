@@ -1,6 +1,9 @@
 package kr.ac.jejunu.workbranch;
 
 
+import kr.ac.jejunu.workbranch.Model.Project;
+import kr.ac.jejunu.workbranch.Model.User;
+import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +13,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -93,6 +96,12 @@ public class ProjectTest {
         assertThat(project.getUserEmail(), is(nullValue()));
         assertThat(project.getPDate(), is(nullValue()));
 
+    }
+
+    @Test
+    public void list() {
+        List<Project> projects = restTemplate.getForObject( PATH +"/list", List.class);
+        assertThat(projects, not(IsEmptyCollection.empty()));
     }
 
 }

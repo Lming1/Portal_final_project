@@ -1,6 +1,7 @@
 package kr.ac.jejunu.workbranch;
 
 
+import kr.ac.jejunu.workbranch.Model.User;
 import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,8 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -47,7 +46,7 @@ public class UserTest {
 
     @Test
     public void insert(){
-        String email = "testuser1@test.com";
+        String email = "testuser4@test.com";
         String name = "minhyeok";
         String password = "12345";
         User createdUser = createUser(email, name, password);
@@ -72,7 +71,7 @@ public class UserTest {
 
     @Test
     public void modify() {
-        String email = "testuser1@test.com";
+        String email = "testuser3@test.com";
         String name = "minhyeok";
         String password = "12345";
         User createdUser = createUser(email, name, password);
@@ -84,7 +83,7 @@ public class UserTest {
 
     @Test
     public void delete() {
-        String email = "testuser1@test.com";
+        String email = "testuser4@test.com";
         String name = "minhyeok";
         String password = "12345";
         User createdUser = createUser(email, name, password);

@@ -1,4 +1,4 @@
-package kr.ac.jejunu.workbranch;
+package kr.ac.jejunu.workbranch.Model;
 
 
 import lombok.Data;
@@ -25,6 +25,7 @@ public class Project {
     @Column(name = "project_date", nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private Date pDate;
+
 
     @Column(name = "user_email")
     private String userEmail;

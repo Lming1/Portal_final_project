@@ -1,4 +1,4 @@
-package kr.ac.jejunu.workbranch;
+package kr.ac.jejunu.workbranch.Model;
 
 
 import lombok.Data;
@@ -33,6 +33,9 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date regDate;
 
+//    @OneToMany
+//    @JoinColumn(name = "user_email")
+//    private List<Project> projects;
 
 
 
