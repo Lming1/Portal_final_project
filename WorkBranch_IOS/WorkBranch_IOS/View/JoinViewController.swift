@@ -26,24 +26,27 @@ class JoinViewController: UIViewController {
     }
     
     func joinWithJson() {
-        // 회원정보
-        let uvo = UserVO()
-        // 가입 정보 받아오기
-        uvo.email = emailField.text
-        uvo.name = nameField.text
-        uvo.password = passwordField.text
+        // 날짜 포맷
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier:"ko_KR")
+        formatter.dateFormat = "yyyy-MM-dd"
+        let dateString = formatter.string(from: date)
+        // encoder
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.sortedKeys, .prettyPrinted]
+        let joinUser = UserVO(email: emailField.text!, name: nameField.text!, password: passwordField.text!, regDate: dateString)
         
+        let jsonData = try? encoder.encode(joinUser)
+        if let jsonData = jsonData, let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+        }
         let url = URL(string: "http://localhost:8080/api/user")!
-        let jsonDict = ["email": "\(String(uvo.email!))",
-            "name": "\(String(uvo.name!))",
-            "password": "\(String(uvo.password!))"]
-        let jsonData = try! JSONSerialization.data(withJSONObject: jsonDict, options: [])
-        
         var request = URLRequest(url: url)
         request.httpMethod = "post"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
-        
+
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("error:", error)
@@ -62,7 +65,7 @@ class JoinViewController: UIViewController {
                 print("error:", error)
             }
         }
-        
+
         task.resume()
         
         

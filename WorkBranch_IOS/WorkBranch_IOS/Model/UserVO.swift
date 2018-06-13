@@ -7,12 +7,25 @@
 //
 import UIKit
 import Foundation
-class UserVO {
-    var id: String?
+class UserVO: Codable {
+//    var id: String?
     var email: String?
     var name: String?
     var password: String?
-    var userPhoto: UIImage?
-    var regdate: String?
+//    var userPhoto: UIImage?
+    var regDate: String?
+    
+    init() {
+        
+    }
+    
+    init(email: String, name: String, password: String, regDate: String) {
+        self.email = email
+        self.name = name
+        self.password = password
+        self.regDate = regDate
+    }
+    
+    
 }
 

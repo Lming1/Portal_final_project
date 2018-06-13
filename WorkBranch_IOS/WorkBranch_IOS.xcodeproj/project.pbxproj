@@ -18,6 +18,9 @@
 		1853C0B520C161990061274D /* WorkBranch_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C0B420C161990061274D /* WorkBranch_IOSTests.swift */; };
 		1853C0C020C161990061274D /* WorkBranch_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C0BF20C161990061274D /* WorkBranch_IOSUITests.swift */; };
 		1866A1DA20CE944F009EB4C6 /* memo-0-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1866A1D920CE944F009EB4C6 /* memo-0-1.jpg */; };
+		189FEB3820CFA88000A5BA42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEB3720CFA88000A5BA42 /* MainViewController.swift */; };
+		189FEB3F20CFAD5900A5BA42 /* 56-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 189FEB3D20CFAD5800A5BA42 /* 56-512.png */; };
+		189FEB4020CFAD5900A5BA42 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 189FEB3E20CFAD5900A5BA42 /* folder.png */; };
 		18D6E34820C94F1F00B548EC /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E34720C94F1F00B548EC /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 		1853C0BF20C161990061274D /* WorkBranch_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkBranch_IOSUITests.swift; sourceTree = "<group>"; };
 		1853C0C120C161990061274D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1866A1D920CE944F009EB4C6 /* memo-0-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "memo-0-1.jpg"; sourceTree = "<group>"; };
+		189FEB3720CFA88000A5BA42 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		189FEB3D20CFAD5800A5BA42 /* 56-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "56-512.png"; sourceTree = "<group>"; };
+		189FEB3E20CFAD5900A5BA42 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
 		18D6E34720C94F1F00B548EC /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +104,7 @@
 				18D6E34720C94F1F00B548EC /* JoinViewController.swift */,
 				183DEB6120C941D800132C96 /* UserViewController.swift */,
 				1853C09E20C161970061274D /* ViewController.swift */,
+				189FEB3720CFA88000A5BA42 /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +166,8 @@
 		1866A1D820CE9442009EB4C6 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				189FEB3D20CFAD5800A5BA42 /* 56-512.png */,
+				189FEB3E20CFAD5900A5BA42 /* folder.png */,
 				1866A1D920CE944F009EB4C6 /* memo-0-1.jpg */,
 			);
 			path = resources;
@@ -271,7 +280,9 @@
 				1866A1DA20CE944F009EB4C6 /* memo-0-1.jpg in Resources */,
 				1853C0AA20C161990061274D /* LaunchScreen.storyboard in Resources */,
 				1853C0A720C161990061274D /* Assets.xcassets in Resources */,
+				189FEB3F20CFAD5900A5BA42 /* 56-512.png in Resources */,
 				1853C0A220C161970061274D /* Main.storyboard in Resources */,
+				189FEB4020CFAD5900A5BA42 /* folder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189FEB3820CFA88000A5BA42 /* MainViewController.swift in Sources */,
 				1853C09F20C161970061274D /* ViewController.swift in Sources */,
 				1834EB6620CA6FA5002F21C3 /* UserVO.swift in Sources */,
 				1853C0A520C161970061274D /* WorkBranch_IOS.xcdatamodeld in Sources */,
@@ -477,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XN5BQUAUEN;
 				INFOPLIST_FILE = WorkBranch_IOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,7 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XN5BQUAUEN;
 				INFOPLIST_FILE = WorkBranch_IOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

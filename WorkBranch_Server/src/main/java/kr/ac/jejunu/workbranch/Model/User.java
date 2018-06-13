@@ -30,7 +30,7 @@ public class User {
     private String user_photo;
 
     @Column(name = "reg_date")
-    @Temporal(TemporalType.TIMESTAMP)
+//    @Temporal(TemporalType.TIMESTAMP)
     private Date regDate;
 
 //    @OneToMany
