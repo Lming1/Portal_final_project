@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     @IBOutlet var profile: UIImageView!
     @IBOutlet var tableView: UITableView!
     
@@ -23,8 +23,40 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         self.profile.layer.cornerRadius = self.profile.frame.width / 2
         self.profile.layer.masksToBounds = true
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedProfile(_:)))
+        self.profile.addGestureRecognizer(gesture)
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func tappedProfile(_ sender: Any) {
+        let msg = "프로필 이미지를 읽어올 곳을 선택하세요"
+        let sheet = UIAlertController(title: msg, message: nil, preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title: "취소", style: .cancel))
+        sheet.addAction(UIAlertAction(title: "저장된 앨범", style: .default) {(_) in
+            selectLibrary(src: .savedPhotosAlbum)
+        })
+        sheet.addAction(UIAlertAction(title: "포토 라이브러리", style: .default) {(_) in
+            selectLibrary(src: .photoLibrary)
+        })
+        sheet.addAction(UIAlertAction(title: "카메라", style: .default) {(_) in
+            selectLibrary(src: .camera)
+        })
+        self.present(sheet, animated: false)
+        
+        
+        
+        func selectLibrary(src: UIImagePickerControllerSourceType) {
+            if UIImagePickerController.isSourceTypeAvailable(src) {
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.allowsEditing = true
+                self.present(picker, animated: false)
+            } else {
+                self.alert("사용할 수 없는 타입입니다.")
+            }
+        }
     }
 
     
@@ -67,6 +99,28 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.profile.image = img
+        }
+        self.dismiss(animated: true)
+    }
+    
+}
+
+
+extension UIViewController {
+    func alert(_ message: String, completion: (()->Void)? = nil) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .cancel) { (_) in
+                completion?()
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: false)
+        }
     }
 }
 
