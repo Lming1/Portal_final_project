@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Foundation
+import Alamofire
 class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     @IBOutlet var profile: UIImageView!
     @IBOutlet var tableView: UITableView!
@@ -61,6 +62,32 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
 
     
     @IBAction func submit(_ sender: Any) {
+        let profile = UIImagePNGRepresentation(self.profile.image!)?.base64EncodedString()
+        
+        let param: Parameters = [
+            "email" : self.fieldAccount.text!,
+            "password" : self.fieldPassword.text!,
+            "name" : self.fieldName.text!,
+//            "user_photo" : profile!
+        ]
+        
+        let url = "http://localhost:8080/api/user"
+        let call = Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default)
+        
+        call.responseJSON { res in
+            guard let jsonObject = res.result.value as? [String: Any] else {
+                self.alert("서버 호출 과정에서 오류 발생")
+                return
+            }
+            let resultCode = jsonObject["result_code"] as! Int
+            if resultCode == 200 {
+                self.alert("가입이 완료되었습니다.")
+                
+            } else {
+                let errorMsg = jsonObject["result_code"] as! Int
+                self.alert("\(errorMsg)")
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

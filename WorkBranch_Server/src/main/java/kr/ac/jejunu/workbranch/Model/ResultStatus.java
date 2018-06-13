@@ -4,6 +4,10 @@ import lombok.Data;
 
 @Data
 public class ResultStatus {
-    private Integer code;
+    private Integer result_code;
     private String message;
+
+    public ResultStatus(Integer result_code){
+        this.result_code = result_code;
+    }
 }

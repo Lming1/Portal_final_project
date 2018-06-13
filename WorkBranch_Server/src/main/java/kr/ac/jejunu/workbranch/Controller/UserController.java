@@ -3,11 +3,14 @@ package kr.ac.jejunu.workbranch.Controller;
 
 import kr.ac.jejunu.workbranch.Model.Member;
 import kr.ac.jejunu.workbranch.Model.MemberRole;
+import kr.ac.jejunu.workbranch.Model.ResultStatus;
 import kr.ac.jejunu.workbranch.Repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,13 +36,17 @@ public class UserController {
     }
 
     @PostMapping
-    public Member insert(@RequestBody Member member) {
+    public ResultStatus insert(@RequestBody Member member, HttpServletResponse res) throws IOException {
+        int status = res.getStatus();
         MemberRole role = new MemberRole();
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         member.setPassword(passwordEncoder.encode(member.getPassword()));
         role.setRoleName("USER");
         member.setRoles(Arrays.asList(role));
-        return memberRepository.save(member);
+
+        memberRepository.save(member);
+
+        return new ResultStatus(status);
     }
 
     @PutMapping
