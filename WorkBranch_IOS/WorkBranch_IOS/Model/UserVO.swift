@@ -19,6 +19,11 @@ class UserVO: Codable {
         
     }
     
+    init(email: String, password: String) {
+        self.email = email
+        self.password = password
+    }
+    
     init(email: String, name: String, password: String, regDate: String) {
         self.email = email
         self.name = name

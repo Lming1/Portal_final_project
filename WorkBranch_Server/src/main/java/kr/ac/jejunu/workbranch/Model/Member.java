@@ -2,17 +2,19 @@ package kr.ac.jejunu.workbranch.Model;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Data
-@Entity(name = "user_info")
+@Entity
+@EqualsAndHashCode(of = "email")
 @ToString
-public class User {
+public class Member {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -37,6 +39,8 @@ public class User {
 //    @JoinColumn(name = "user_email")
 //    private List<Project> projects;
 
-
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="email")
+    private List<MemberRole> roles;
 
 }

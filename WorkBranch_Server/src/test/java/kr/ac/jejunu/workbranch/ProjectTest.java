@@ -2,7 +2,6 @@ package kr.ac.jejunu.workbranch;
 
 
 import kr.ac.jejunu.workbranch.Model.Project;
-import kr.ac.jejunu.workbranch.Model.User;
 import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
