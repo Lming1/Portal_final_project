@@ -1,17 +1,17 @@
 package kr.ac.jejunu.workbranch.Controller;
 
 
+import kr.ac.jejunu.workbranch.Model.ApiResponseMessage;
 import kr.ac.jejunu.workbranch.Model.Member;
 import kr.ac.jejunu.workbranch.Model.MemberRole;
-import kr.ac.jejunu.workbranch.Model.ResultStatus;
 import kr.ac.jejunu.workbranch.Repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
@@ -39,9 +39,9 @@ public class UserController {
     }
 
     @PostMapping
-    public ResultStatus insert(@RequestBody Member member, HttpServletResponse res, MultipartFile user_photo) throws IOException {
+    public ApiResponseMessage insert(@RequestBody Member member, HttpServletRequest req, HttpServletResponse res, MultipartFile user_photo) throws IOException {
         if (member.getEmail() == "" || member.getName() == "") {
-            return new ResultStatus(400);
+            return new ApiResponseMessage(HttpStatus.BAD_REQUEST, 400);
         }
         try {
             MemberRole role = new MemberRole();
@@ -52,9 +52,9 @@ public class UserController {
 
             memberRepository.save(member);
 
-            return new ResultStatus(200);
-        } catch (Exception e){
-            return new ResultStatus(500);
+            return new ApiResponseMessage(HttpStatus.OK, 200);
+        } catch (Exception ex){
+            return new ApiResponseMessage(HttpStatus.INTERNAL_SERVER_ERROR, 500, ex);
         }
 
     }

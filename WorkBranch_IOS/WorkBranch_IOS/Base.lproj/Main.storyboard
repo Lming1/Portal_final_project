@@ -163,9 +163,11 @@
                         <outlet property="indicatorView" destination="hcz-zP-6zS" id="1IM-OY-VcC"/>
                         <outlet property="profile" destination="hQy-KQ-y6w" id="n43-q2-wGp"/>
                         <outlet property="tableView" destination="Lj8-hB-v1Z" id="m0a-cS-DEY"/>
+                        <segue destination="mTn-TB-sY6" kind="unwind" unwindAction="backLoginVC:" id="Cg0-4T-Eli"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCx-bt-9bL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mTn-TB-sY6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1816.8" y="133.5832083958021"/>
         </scene>

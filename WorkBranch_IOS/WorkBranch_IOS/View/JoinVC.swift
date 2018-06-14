@@ -93,7 +93,11 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
             }
             let resultCode = jsonObject["result_code"] as! Int
             if resultCode == 200 {
-                self.alert("가입이 완료되었습니다.")
+                self.alert("가입이 완료되었습니다.") {
+//                    self.performSegue(withIdentifier: "backLoginVC", sender: self)
+                    self.navigationController?.popViewController(animated: false)
+                }
+                
                 
             } else {
 //                let errorMsg = jsonObject["result_code"] as! Int
