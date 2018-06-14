@@ -7,7 +7,7 @@ public class ResultStatus {
     private Integer result_code;
     private String message;
 
-    public ResultStatus(Integer result_code){
+    public ResultStatus(int result_code){
         this.result_code = result_code;
     }
 }

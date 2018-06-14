@@ -84,8 +84,8 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
                 self.alert("가입이 완료되었습니다.")
                 
             } else {
-                let errorMsg = jsonObject["result_code"] as! Int
-                self.alert("\(errorMsg)")
+//                let errorMsg = jsonObject["result_code"] as! Int
+                self.alert("항목들을 전부 입력해주세요")
             }
         }
     }
