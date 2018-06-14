@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -38,19 +39,24 @@ public class UserController {
     }
 
     @PostMapping
-    public ResultStatus insert(@RequestBody Member member, HttpServletResponse res, String email) throws IOException {
-        if (member.getEmail() == "" || member.getEmail() == null || member.getName() == "") {
+    public ResultStatus insert(@RequestBody Member member, HttpServletResponse res, MultipartFile user_photo) throws IOException {
+        if (member.getEmail() == "" || member.getName() == "") {
             return new ResultStatus(400);
         }
-        MemberRole role = new MemberRole();
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        member.setPassword(passwordEncoder.encode(member.getPassword()));
-        role.setRoleName("USER");
-        member.setRoles(Arrays.asList(role));
+        try {
+            MemberRole role = new MemberRole();
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            member.setPassword(passwordEncoder.encode(member.getPassword()));
+            role.setRoleName("USER");
+            member.setRoles(Arrays.asList(role));
 
-        memberRepository.save(member);
+            memberRepository.save(member);
 
-        return new ResultStatus(200);
+            return new ResultStatus(200);
+        } catch (Exception e){
+            return new ResultStatus(500);
+        }
+
     }
 
     @PutMapping("/{email}")

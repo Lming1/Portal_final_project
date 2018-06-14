@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18170EFF20D26AEB00BB7660 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18170EFE20D26AEB00BB7660 /* UserVC.swift */; };
 		1834EB6620CA6FA5002F21C3 /* UserVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1834EB6520CA6FA5002F21C3 /* UserVO.swift */; };
 		183DEB6220C941D800132C96 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DEB6120C941D800132C96 /* UserViewController.swift */; };
 		1853C09D20C161970061274D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C09C20C161970061274D /* AppDelegate.swift */; };
@@ -24,6 +25,9 @@
 		189FEB3F20CFAD5900A5BA42 /* 56-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 189FEB3D20CFAD5800A5BA42 /* 56-512.png */; };
 		189FEB4020CFAD5900A5BA42 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 189FEB3E20CFAD5900A5BA42 /* folder.png */; };
 		18D6E34820C94F1F00B548EC /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E34720C94F1F00B548EC /* JoinViewController.swift */; };
+		18EDD73320D21A370086F77A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDD73220D21A370086F77A /* ProfileVC.swift */; };
+		18EDD73520D21B630086F77A /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDD73420D21B630086F77A /* UserInfoManager.swift */; };
+		18EDD73920D220940086F77A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDD73820D220940086F77A /* LoginVC.swift */; };
 		2C7883EF239E64F8FAE5CE58 /* Pods_WorkBranch_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F786D773017F7E4187BE8B54 /* Pods_WorkBranch_IOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18170EFE20D26AEB00BB7660 /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		1834EB6520CA6FA5002F21C3 /* UserVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
 		183DEB6120C941D800132C96 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		1853C09920C161970061274D /* WorkBranch_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkBranch_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +73,9 @@
 		189FEB3D20CFAD5800A5BA42 /* 56-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "56-512.png"; sourceTree = "<group>"; };
 		189FEB3E20CFAD5900A5BA42 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
 		18D6E34720C94F1F00B548EC /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		18EDD73220D21A370086F77A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		18EDD73420D21B630086F77A /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		18EDD73820D220940086F77A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		24EA929B050CDA2D41B04D94 /* Pods-WorkBranch_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkBranch_IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkBranch_IOS/Pods-WorkBranch_IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7D8572AB56ED34F5F554CC69 /* Pods-WorkBranch_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkBranch_IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkBranch_IOS/Pods-WorkBranch_IOS.release.xcconfig"; sourceTree = "<group>"; };
 		F786D773017F7E4187BE8B54 /* Pods_WorkBranch_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkBranch_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +123,9 @@
 				1853C09E20C161970061274D /* ViewController.swift */,
 				189FEB3720CFA88000A5BA42 /* MainViewController.swift */,
 				1858914320D199BA0009D271 /* JoinVC.swift */,
+				18EDD73220D21A370086F77A /* ProfileVC.swift */,
+				18EDD73820D220940086F77A /* LoginVC.swift */,
+				18170EFE20D26AEB00BB7660 /* UserVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 				1853C0AB20C161990061274D /* Info.plist */,
 				1853C0A320C161970061274D /* WorkBranch_IOS.xcdatamodeld */,
 				1858914520D1A0570009D271 /* Utils.swift */,
+				18EDD73420D21B630086F77A /* UserInfoManager.swift */,
 			);
 			path = WorkBranch_IOS;
 			sourceTree = "<group>";
@@ -378,6 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EDD73520D21B630086F77A /* UserInfoManager.swift in Sources */,
+				18EDD73320D21A370086F77A /* ProfileVC.swift in Sources */,
+				18EDD73920D220940086F77A /* LoginVC.swift in Sources */,
 				1858914420D199BA0009D271 /* JoinVC.swift in Sources */,
 				189FEB3820CFA88000A5BA42 /* MainViewController.swift in Sources */,
 				1858914620D1A0570009D271 /* Utils.swift in Sources */,
@@ -385,6 +400,7 @@
 				1834EB6620CA6FA5002F21C3 /* UserVO.swift in Sources */,
 				1853C0A520C161970061274D /* WorkBranch_IOS.xcdatamodeld in Sources */,
 				183DEB6220C941D800132C96 /* UserViewController.swift in Sources */,
+				18170EFF20D26AEB00BB7660 /* UserVC.swift in Sources */,
 				18D6E34820C94F1F00B548EC /* JoinViewController.swift in Sources */,
 				1853C09D20C161970061274D /* AppDelegate.swift in Sources */,
 			);

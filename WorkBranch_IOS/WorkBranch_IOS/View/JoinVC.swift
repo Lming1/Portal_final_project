@@ -12,10 +12,12 @@ import Alamofire
 class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     @IBOutlet var profile: UIImageView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
     
     var fieldAccount: UITextField!
     var fieldPassword: UITextField!
     var fieldName: UITextField!
+    var isCalling = false
     
     
     override func viewDidLoad() {
@@ -27,6 +29,7 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedProfile(_:)))
         self.profile.addGestureRecognizer(gesture)
+        self.view.bringSubview(toFront: self.indicatorView)
 
         // Do any additional setup after loading the view.
     }
@@ -62,6 +65,13 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
 
     
     @IBAction func submit(_ sender: Any) {
+        if self.isCalling == true {
+            self.alert("진행 중입니다. 잠시만 기다려주세요")
+            return
+        } else {
+            self.isCalling = true
+        }
+        self.indicatorView.startAnimating()
         let profile = UIImagePNGRepresentation(self.profile.image!)?.base64EncodedString()
         
         let param: Parameters = [
@@ -75,7 +85,9 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
         let call = Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default)
         
         call.responseJSON { res in
+            self.indicatorView.stopAnimating()
             guard let jsonObject = res.result.value as? [String: Any] else {
+                self.isCalling = false
                 self.alert("서버 호출 과정에서 오류 발생")
                 return
             }

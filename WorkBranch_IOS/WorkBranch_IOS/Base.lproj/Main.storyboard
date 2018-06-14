@@ -12,19 +12,19 @@
         <!--WorkBranch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorkBranch_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="WorkBranch_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5zv-BN-WCE">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5zv-BN-WCE">
                                 <rect key="frame" x="104" y="199" width="198" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjo-DG-pDG">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjo-DG-pDG">
                                 <rect key="frame" x="104" y="279" width="198" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -36,14 +36,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c4p-KR-g5W"/>
-                                    <segue destination="sp0-kR-QLU" kind="show" identifier="login_segue" id="mIJ-Wf-zdw"/>
+                                    <action selector="doLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PmP-Ip-DwY"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NZ-TD-uVT">
-                                <rect key="frame" x="172" y="416" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Join"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="e-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfP-iu-wkP">
                                 <rect key="frame" x="47" y="204" width="49" height="21"/>
@@ -78,18 +72,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="idField" destination="5zv-BN-WCE" id="Ymf-cR-P8H"/>
-                        <outlet property="passField" destination="hjo-DG-pDG" id="Cfa-pm-iQX"/>
+                        <outlet property="idField" destination="5zv-BN-WCE" id="FSW-RO-MzL"/>
+                        <outlet property="passwordField" destination="hjo-DG-pDG" id="sdg-gB-AIC"/>
+                        <segue destination="sp0-kR-QLU" kind="presentation" identifier="SuccessSegue" id="PWB-qz-nra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--UserVC-->
         <scene sceneID="U6x-Uu-9dO">
             <objects>
-                <viewController id="aXk-em-GVa" sceneMemberID="viewController">
+                <viewController id="aXk-em-GVa" customClass="UserVC" customModule="WorkBranch_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rBG-NJ-hrb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,11 +100,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hdj-sa-lXm"/>
                     </view>
-                    <navigationItem key="navigationItem" id="usq-go-jRe"/>
+                    <navigationItem key="navigationItem" id="usq-go-jRe">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="uHK-Tm-nyV">
+                            <connections>
+                                <action selector="doLogout:" destination="aXk-em-GVa" id="CZo-0c-omY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="8KV-SD-kwT" kind="unwind" identifier="backLoginVC" unwindAction="backLoginVC:" id="23f-pa-c1G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V24-iG-j11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8KV-SD-kwT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4079.1999999999998" y="1557.5712143928038"/>
+            <point key="canvasLocation" x="3575" y="1720"/>
         </scene>
         <!--신규 계정 등록-->
         <scene sceneID="Odk-YG-4fr">
@@ -138,6 +143,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hcz-zP-6zS">
+                                <rect key="frame" x="169" y="266" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gk1-ZW-iFr"/>
@@ -150,6 +160,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="indicatorView" destination="hcz-zP-6zS" id="1IM-OY-VcC"/>
                         <outlet property="profile" destination="hQy-KQ-y6w" id="n43-q2-wGp"/>
                         <outlet property="tableView" destination="Lj8-hB-v1Z" id="m0a-cS-DEY"/>
                     </connections>
@@ -214,7 +225,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="n3n-3f-jfS"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7Yn-nB-Tqe"/>
+                    <navigationItem key="navigationItem" id="7Yn-nB-Tqe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pmb-CB-O0I"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ng-bg-58D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
