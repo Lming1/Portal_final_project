@@ -37,10 +37,9 @@ class ProjectVC: UITableViewController, UISearchBarDelegate {
         let url = "http://172.20.10.3:8080/api/project/list"
         let apiURI: URL! = URL(string: url)
         do {
-            let stringdata = try NSString(contentsOf: apiURI!, encoding: 0x80_000_422)
-            let encdata = stringdata.data(using: String.Encoding.utf8.rawValue)
+            let apidata = try Data(contentsOf: apiURI)
             do {
-                let apiArray = try JSONSerialization.jsonObject(with: encdata!, options: []) as? NSArray
+                let apiArray = try JSONSerialization.jsonObject(with: apidata, options: []) as? NSArray
                 for obj in apiArray! {
                     self.list.append(obj as! NSDictionary)
                     print(self.list)

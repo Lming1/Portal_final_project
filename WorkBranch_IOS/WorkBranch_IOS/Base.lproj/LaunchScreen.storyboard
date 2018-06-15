@@ -20,8 +20,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memo-0-1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Iqn-3s-tef">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Work Branch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1L-4r-JAb">
-                                <rect key="frame" x="107" y="316" width="201" height="85"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Work Branch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="278" translatesAutoresizingMaskIntoConstraints="NO" id="X1L-4r-JAb">
+                                <rect key="frame" x="68" y="200" width="278" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="55"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -29,12 +30,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Iqn-3s-tef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3pp-hN-W5z"/>
-                            <constraint firstItem="X1L-4r-JAb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Loc-xy-xvL"/>
-                            <constraint firstItem="X1L-4r-JAb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="30" id="U7Q-2r-HQw"/>
-                            <constraint firstItem="Iqn-3s-tef" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ju1-sw-5f1"/>
-                            <constraint firstItem="Iqn-3s-tef" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oGX-om-scI"/>
-                            <constraint firstItem="Iqn-3s-tef" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wkw-PI-iCj"/>
+                            <constraint firstItem="Iqn-3s-tef" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TYW-N4-9jU"/>
+                            <constraint firstItem="Iqn-3s-tef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eq8-l2-cfH"/>
+                            <constraint firstItem="Iqn-3s-tef" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ohu-12-Nu9"/>
+                            <constraint firstItem="Iqn-3s-tef" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vSV-nC-zAH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
