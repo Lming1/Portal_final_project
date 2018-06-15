@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -35,12 +36,13 @@ public class Member {
 //    @Temporal(TemporalType.TIMESTAMP)
     private Date regDate;
 
-//    @OneToMany
-//    @JoinColumn(name = "user_email")
-//    private List<Project> projects;
+
 
     @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name="email")
     private List<MemberRole> roles;
+
+
+
 
 }

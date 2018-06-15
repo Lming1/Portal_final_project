@@ -6,6 +6,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity(name = "board")
@@ -24,10 +25,11 @@ public class Board {
     private String email;
 
     @Column(name = "project_id")
-    private Integer project_id;
+    private Integer projectId;
 
     @Column(name = "b_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date bDate;
+
 
 }

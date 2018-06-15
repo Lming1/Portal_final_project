@@ -1,9 +1,11 @@
 package kr.ac.jejunu.workbranch.Controller;
 
 
+import kr.ac.jejunu.workbranch.Model.ApiResponseMessage;
 import kr.ac.jejunu.workbranch.Model.Board;
 import kr.ac.jejunu.workbranch.Repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,9 +21,16 @@ public class BoardController {
         return boardRepository.findById(bid).get();
     }
 
+    @GetMapping("/list/{projectId}")
+    public List<Board> getPid(@PathVariable Integer projectId) {
+
+        return boardRepository.findAllByProjectId(projectId);
+    }
+
     @PostMapping
-    public Board create(@RequestBody Board board) {
-        return boardRepository.save(board);
+    public ApiResponseMessage create(@RequestBody Board board) {
+        boardRepository.save(board);
+        return new ApiResponseMessage(HttpStatus.OK, 200);
     }
 
     @GetMapping("/list")
