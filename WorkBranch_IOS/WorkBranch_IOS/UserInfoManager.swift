@@ -19,7 +19,7 @@ struct UserInfoKey {
     static let tutorial = "TUTORIAL"
 }
 
-class UserInfoManager {
+class UserInfoManager: UIViewController {
     var loginid: Int {
         get {
             return UserDefaults.standard.integer(forKey: UserInfoKey.loginId)
@@ -91,7 +91,10 @@ class UserInfoManager {
         let call = Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default)
         call.responseJSON { res in
             guard let jsonObject = res.result.value as? NSDictionary else {
-                fail?("잘못된 응답 형식입니다: \(res.result.value!)")
+//                fail?("잘못된 응답 형식입니다: \(res.result.value!)")
+                let alert = UIAlertController(title: nil, message: "네트워크 오류", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .default))
+                self.present(alert, animated: false)
                 return
             }
             let resultCode = jsonObject["result_code"] as! Int
