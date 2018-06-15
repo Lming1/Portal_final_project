@@ -65,7 +65,7 @@ class BoardVC: UITableViewController {
     
     func boardJson() {
         self.list.removeAll()
-        let url = "http://172.20.10.3/api/board/list/7"
+        let url = "http://172.20.10.3:8080/api/board/list/7"
         let apiURI: URL! = URL(string: url)
         do {
             let apidata = try Data(contentsOf: apiURI)
