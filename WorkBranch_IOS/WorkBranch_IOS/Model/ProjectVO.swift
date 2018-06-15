@@ -1,5 +1,5 @@
 //
-//  BoardCell.swift
+//  ProjectVO.swift
 //  WorkBranch_IOS
 //
 //  Created by 이민혁 on 2018. 6. 15..
@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import UIKit
 
-class BoardCell: UITableViewCell {
-    @IBOutlet var title: UILabel!
-    @IBOutlet var content: UILabel!
-    
+class ProjectVO {
+    var pid: Int?
+    var projectName: String?
+    var pEmail: String?
 }

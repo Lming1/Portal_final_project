@@ -27,14 +27,14 @@ class ProjectVC: UITableViewController, UISearchBarDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.projectJson()
-        self.tableView.reloadData()
+//        self.projectJson()
+//        self.tableView.reloadData()
     }
 
     
     func projectJson() {
         self.list.removeAll()
-        let url = "http://localhost:8080/api/project/list"
+        let url = "http://172.20.10.3:8080/api/project/list"
         let apiURI: URL! = URL(string: url)
         do {
             let stringdata = try NSString(contentsOf: apiURI!, encoding: 0x80_000_422)
@@ -84,4 +84,19 @@ class ProjectVC: UITableViewController, UISearchBarDelegate {
     
     
   
+}
+
+
+extension BoardVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue_board" {
+            let cell = sender as! ProjectCell
+            let path = self.tableView.indexPath(for: cell)
+            let projectInfo = self.list[path!.row]
+            let boardVC = segue.destination as? BoardVC
+            // 값 전달 더 찾아볼것..
+//            boardVC?.pvo = fromObj!
+            
+        }
+    }
 }

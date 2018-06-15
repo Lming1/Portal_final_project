@@ -81,7 +81,7 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
 //            "user_photo" : profile!
         ]
         
-        let url = "http://localhost:8080/api/user"
+        let url = "http://172.20.10.3:8080/api/user"
         let call = Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default)
         
         call.responseJSON { res in

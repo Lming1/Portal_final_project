@@ -14,6 +14,8 @@
 		18170F0720D341BC00BB7660 /* presentation.png in Resources */ = {isa = PBXBuildFile; fileRef = 18170F0620D341BC00BB7660 /* presentation.png */; };
 		18170F0920D3433E00BB7660 /* BoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18170F0820D3433E00BB7660 /* BoardVC.swift */; };
 		18170F0B20D343C700BB7660 /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18170F0A20D343C700BB7660 /* BoardCell.swift */; };
+		18170F0D20D3514F00BB7660 /* BoardVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18170F0C20D3514F00BB7660 /* BoardVO.swift */; };
+		18170F0F20D351EC00BB7660 /* ProjectVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18170F0E20D351EC00BB7660 /* ProjectVO.swift */; };
 		1834EB6620CA6FA5002F21C3 /* UserVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1834EB6520CA6FA5002F21C3 /* UserVO.swift */; };
 		183DEB6220C941D800132C96 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DEB6120C941D800132C96 /* UserViewController.swift */; };
 		1853C09D20C161970061274D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C09C20C161970061274D /* AppDelegate.swift */; };
@@ -62,6 +64,8 @@
 		18170F0620D341BC00BB7660 /* presentation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presentation.png; sourceTree = "<group>"; };
 		18170F0820D3433E00BB7660 /* BoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardVC.swift; sourceTree = "<group>"; };
 		18170F0A20D343C700BB7660 /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
+		18170F0C20D3514F00BB7660 /* BoardVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardVO.swift; sourceTree = "<group>"; };
+		18170F0E20D351EC00BB7660 /* ProjectVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVO.swift; sourceTree = "<group>"; };
 		1834EB6520CA6FA5002F21C3 /* UserVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
 		183DEB6120C941D800132C96 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		1853C09920C161970061274D /* WorkBranch_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkBranch_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				1834EB6520CA6FA5002F21C3 /* UserVO.swift */,
+				18170F0C20D3514F00BB7660 /* BoardVO.swift */,
+				18170F0E20D351EC00BB7660 /* ProjectVO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,7 +429,9 @@
 				1834EB6620CA6FA5002F21C3 /* UserVO.swift in Sources */,
 				1853C0A520C161970061274D /* WorkBranch_IOS.xcdatamodeld in Sources */,
 				183DEB6220C941D800132C96 /* UserViewController.swift in Sources */,
+				18170F0F20D351EC00BB7660 /* ProjectVO.swift in Sources */,
 				18170EFF20D26AEB00BB7660 /* UserVC.swift in Sources */,
+				18170F0D20D3514F00BB7660 /* BoardVO.swift in Sources */,
 				18D6E34820C94F1F00B548EC /* JoinViewController.swift in Sources */,
 				1853C09D20C161970061274D /* AppDelegate.swift in Sources */,
 				18170F0920D3433E00BB7660 /* BoardVC.swift in Sources */,

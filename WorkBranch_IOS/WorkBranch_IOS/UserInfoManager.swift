@@ -82,7 +82,7 @@ class UserInfoManager {
     }
     
     func login(email: String, password: String, success: (() -> Void)? = nil, fail: ((String)->Void)? = nil) {
-        let url = "http://localhost:8080/auth/login"
+        let url = "http://172.20.10.3:8080/auth/login"
         let param: Parameters = [
             "email": email,
             "password": password
