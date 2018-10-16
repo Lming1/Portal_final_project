@@ -1,6 +1,0 @@
-framework module Pods_WorkBranch_IOS {
-  umbrella header "Pods-WorkBranch_IOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
