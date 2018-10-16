@@ -16,6 +16,10 @@ class BoardVC: UITableViewController {
     override func viewDidLoad() {
         self.boardJson()
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.boardJson()
+//        self.tableView.reloadData()
+//    }
     @IBAction func addBoard(_ sender: Any) {
         let addAlert = UIAlertController(title: "게시판 생성", message: nil, preferredStyle: .alert)
         

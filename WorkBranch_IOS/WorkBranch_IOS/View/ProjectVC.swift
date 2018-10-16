@@ -27,8 +27,8 @@ class ProjectVC: UITableViewController, UISearchBarDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.projectJson()
-//        self.tableView.reloadData()
+        self.projectJson()
+        self.tableView.reloadData()
     }
 
     

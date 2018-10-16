@@ -3,6 +3,7 @@ package kr.ac.jejunu.workbranch;
 
 import kr.ac.jejunu.workbranch.Model.Board;
 import kr.ac.jejunu.workbranch.Model.Project;
+import kr.ac.jejunu.workbranch.Repository.BoardRepository;
 import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +30,9 @@ public class BoardTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    @Autowired
+    private BoardRepository boardRepository;
+
 
     @Test
     public void get() {
@@ -42,7 +46,7 @@ public class BoardTest {
         assertThat(board.getTitle(), is(title));
         assertThat(board.getContents(), is(contents));
         assertThat(board.getEmail(), is(email));
-        assertThat(board.getProject_id(), is(project_id));
+        assertThat(board.getProjectId(), is(project_id));
     }
 
     @Test
@@ -74,7 +78,7 @@ public class BoardTest {
         board.setTitle(title);
         board.setContents(contents);
         board.setEmail(email);
-        board.setProject_id(project_id);
+        board.setProjectId(project_id);
         board.setBDate(date);
         return restTemplate.postForObject(PATH, board, Board.class);
     }
@@ -87,15 +91,22 @@ public class BoardTest {
 
     @Test
     public void modify() throws ParseException {
-        String title = "board_title";
+        String title = "board_title1";
         String contents = "test_contents";
         String email = "testuser@test.com";
         Integer project_id = 1;
+        Integer bid = 20;
         Board createdBoard = createBoard(title, contents, email, project_id);
         createdBoard.setTitle("title1");
         createdBoard.setContents("ggggggg");
         restTemplate.put(PATH, createdBoard);
         validate("title1", "ggggggg", email, createdBoard);
+//        Board createdBoard = createBoard(title, contents, email, project_id);
+//        createdBoard.setTitle("title1");
+//        createdBoard.setContents("ggggggg");
+//        restTemplate.put(PATH, createdBoard);
+
+
     }
 
     @Test
@@ -112,7 +123,7 @@ public class BoardTest {
         assertThat(board.getTitle(), is(nullValue()));
         assertThat(board.getContents(), is(nullValue()));
         assertThat(board.getEmail(), is(nullValue()));
-        assertThat(board.getProject_id(), is(nullValue()));
+        assertThat(board.getProjectId(), is(nullValue()));
         assertThat(board.getBDate(), is(nullValue()));
     }
 }
